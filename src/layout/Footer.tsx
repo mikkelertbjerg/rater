@@ -15,7 +15,7 @@ const Footer = () => {
     )
 
     return (
-        <Toolbar className="p-4" left={left} right={right} />
+        <Toolbar className="p-3" left={left} right={right} />
     )
 }
 

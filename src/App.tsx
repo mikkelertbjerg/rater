@@ -2,17 +2,18 @@ import "primereact/resources/themes/md-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
-import Footer from "./layout/Footer";
-import Navigation from "./layout/Navigation";
-import SignUpPage from "./pages/sign-up-page/SignUpPage";
+import { Outlet } from "react-router-dom";
+import Layout from "./layout/Layout";
+import LandingPage from "./pages/landing-page/LandingPage";
 
 
 function App() {
   return (
     <>
-      <Navigation />
-      <SignUpPage />
-      <Footer />
+      <Layout>
+        <LandingPage />
+        <Outlet />
+      </Layout>
     </>
   );
 };
