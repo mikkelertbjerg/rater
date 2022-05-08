@@ -1,12 +1,20 @@
+import "primereact/resources/themes/md-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import LoginPage from "./pages/login-page/LoginPage";
+
+import Footer from "./layout/Footer";
+import Navigation from "./layout/Navigation";
+import SignUpPage from "./pages/sign-up-page/SignUpPage";
 
 
 function App() {
   return (
-    <LoginPage></LoginPage>
+    <>
+      <Navigation />
+      <SignUpPage />
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
