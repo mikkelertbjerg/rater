@@ -1,0 +1,4 @@
+.p-chip.divider-chip {
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+}

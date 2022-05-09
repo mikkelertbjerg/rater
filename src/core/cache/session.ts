@@ -14,9 +14,14 @@ const Session = () => {
         sessionStorage.setItem(key, value);
     }
 
+    const clear = (): void => {
+        sessionStorage.clear();
+    }
+
     return {
         get,
         set,
+        clear
     };
 };
 

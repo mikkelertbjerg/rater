@@ -1,21 +1,28 @@
+import { Divider } from "primereact/divider";
+import { useNavigate } from "react-router-dom";
 import { Button } from "primereact/button";
-import { InputText } from "primereact/inputtext";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex">
-        <InputText
-          id="email"
-          className="flex p-inputtext mb-3 min-w-full"
-          placeholder="Email address"
-          type="email"
+        <Button
+          label="Join an active session?"
+          className="p-button-lg w-full"
+          onClick={() => navigate("/session/join")}
         />
       </div>
       <div className="flex">
+        <Divider />
+        <h4 className="my-5 mx-3">or</h4>
+        <Divider />
+      </div>
+      <div className="flex">
         <Button
-          label="Sign up for Rater"
-          className="p-button-lg p-button-success min-w-full"
+          label="Create your own session!"
+          className="p-button-lg w-full"
+          onClick={() => navigate("/session/create")}
         />
       </div>
     </>
