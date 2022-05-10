@@ -1,5 +1,6 @@
 import "./index.css";
 import "./app.css";
+import "primeflex/primeflex.css";
 import "primereact/resources/themes/arya-orange/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";

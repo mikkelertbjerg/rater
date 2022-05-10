@@ -1,3 +1,4 @@
+import { Card } from "primereact/card";
 import { ReactNode } from "react";
 
 interface Props {
@@ -7,8 +8,10 @@ interface Props {
 const Body = ({ children }: Props) => {
 
     return (
-        <div className="p-10 my-auto justify-content-center align-items-center">
-            {children}
+        <div className="m-auto justify-content-center align-items-center">
+            <Card className="w-18rem md:20rem lg:w-22rem">
+                {children}
+            </Card>
         </div>
     );
 };
