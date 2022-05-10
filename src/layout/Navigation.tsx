@@ -14,6 +14,16 @@ const Navigation = () => {
 
     const items = [
         {
+            label: "Join session",
+            icon: PrimeIcons.ARROW_RIGHT,
+            command: () => navigate("/session/join")
+        },
+        {
+            label: "Create session",
+            icon: PrimeIcons.PLUS,
+            command: () => navigate("/session/create")
+        },
+        {
             label: "Sign up",
             icon: PrimeIcons.USER_EDIT,
             command: () => navigate("/sign-up")

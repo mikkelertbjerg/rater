@@ -9,7 +9,7 @@ const LandingPage = () => {
       <div className="flex">
         <Button
           label="Join an active session?"
-          className="p-button-lg w-full"
+          className="p-button w-full"
           onClick={() => navigate("/session/join")}
         />
       </div>
@@ -21,7 +21,7 @@ const LandingPage = () => {
       <div className="flex">
         <Button
           label="Create your own session!"
-          className="p-button-lg w-full"
+          className="p-button w-full"
           onClick={() => navigate("/session/create")}
         />
       </div>

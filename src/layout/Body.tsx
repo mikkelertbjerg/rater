@@ -7,7 +7,7 @@ interface Props {
 const Body = ({ children }: Props) => {
 
     return (
-        <div className="p-6 my-auto justify-content-center align-items-center">
+        <div className="p-10 my-auto justify-content-center align-items-center">
             {children}
         </div>
     );

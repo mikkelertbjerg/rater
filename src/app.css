@@ -2,3 +2,8 @@
     background: var(--primary-color);
     color: var(--primary-color-text);
 }
+
+.p-10 {
+    padding-left: 10%;
+    padding-right: 10%;
+}
