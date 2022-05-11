@@ -3,10 +3,24 @@ import { Divider } from "primereact/divider";
 import { InputText } from "primereact/inputtext";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import sessionService from "../../core/services/sessionService";
 
-const JoinSession = () => {
+const JoinSessionPage = () => {
     const navigate = useNavigate();
-    const [id, setId] = useState<string>('');
+
+    const [id, setId] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
+
+    const onCreateSession = async () => {
+        try {
+            const session = await sessionService().create();
+            navigate(`/session/${session.id}`);
+        } catch (error) {
+            // TODO, add error toast
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <>
@@ -23,6 +37,7 @@ const JoinSession = () => {
             <div className="flex">
                 <Button
                     label="Join session"
+                    loading={loading}
                     className="p-button mb-3 min-w-full"
                     onClick={() => navigate(`/session/${id}`)}
                 />
@@ -34,13 +49,14 @@ const JoinSession = () => {
             </div>
             <div className="flex">
                 <Button
-                    label="Create your own session!"
                     className="p-button w-full"
-                    onClick={() => navigate("/session/create")}
+                    label="Create your own session!"
+                    loading={loading}
+                    onClick={() => onCreateSession()}
                 />
             </div>
         </>
     );
 };
 
-export default JoinSession;
+export default JoinSessionPage;

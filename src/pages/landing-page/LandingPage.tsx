@@ -1,10 +1,27 @@
 import { Divider } from "primereact/divider";
-import { useNavigate } from "react-router-dom";
 import { Button } from "primereact/button";
-import { Card } from "primereact/card";
+
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import sessionService from "../../core/services/sessionService";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const onCreateSession = async () => {
+    try {
+      const session = await sessionService().create();
+      navigate(`/session/${session.id}`);
+    } catch (error) {
+      // TODO, add error toast
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Button
@@ -18,9 +35,10 @@ const LandingPage = () => {
         <Divider />
       </div>
       <Button
-        label="Create your own session!"
         className="p-button w-full"
-        onClick={() => navigate("/session/create")}
+        label="Create your own session!"
+        onClick={() => onCreateSession()}
+        loading={loading}
       />
     </>
   );
